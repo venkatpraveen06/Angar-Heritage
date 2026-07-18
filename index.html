@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angar Heritage | Authentic Indian Homemade Foods</title>
+  <meta name="description" content="Discover premium homemade Indian delicacies from Angar Heritage. Hand-pounded spices, stone-ground powders, traditional pickles, and sweets prepared fresh.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <h2 style="font-family: var(--font-serif); color: var(--primary-dark); margin-top: 15px;">Angar Heritage</h2>
+    <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--golden); margin-top: 5px;">Slow Fire. Timeless Flavour.</p>
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text" style="font-family: var(--font-serif); font-weight:700;">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="products.html" class="nav-link">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <!-- Wishlist Link -->
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <!-- Cart Toggle Trigger -->
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <!-- Mobile Menu Toggle Burger -->
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content reveal reveal-left">
+        <span class="hero-tag">A Heritage of Indian Cuisine</span>
+        <h1 class="hero-title">Authentic <span>Homemade Foods</span> <br>from Our Kitchen to Yours</h1>
+        <p class="hero-desc">Small-batch, slow-cooked in traditional brass cookware using premium organic ingredients. No artificial preservatives. Only authentic flavours crafted with absolute devotion.</p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary">Shop Our Catalog <i class="fas fa-arrow-right"></i></a>
+          <a href="#about" class="btn btn-secondary">Explore Our Story</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper reveal reveal-zoom">
+        <div class="hero-blob"></div>
+        <img src="images/products/imgi_8_745594472_18141319909519753_2608714947155568092_n.jpg" alt="Angar Heritage Bestseller Pickle" class="hero-main-img" style="border-radius: var(--radius-lg); max-width: 85%;">
+        
+        <!-- Floating Spice Elements -->
+        <img src="images/products/imgi_9_733127060_18141289963519753_7752855716021690095_n.jpg" alt="spice" class="floating-spice spice-1" style="border-radius: 50%;">
+        <img src="images/products/imgi_6_743812577_18141697036519753_8635269984999732576_n.jpg" alt="spice" class="floating-spice spice-2" style="border-radius: 50%;">
+        <img src="images/products/imgi_7_744602137_2525580511275514_7267425761708276990_n.jpg" alt="spice" class="floating-spice spice-3" style="border-radius: 50%;">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" style="background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-img-wrapper reveal reveal-left">
+          <img src="images/about_traditional.png" alt="Traditional Brass Cooking" class="about-img">
+          <div class="about-badge">
+            <span class="number" data-target="25" data-suffix="+">0+</span>
+            <span class="text">Heritage Recipes</span>
+          </div>
+        </div>
+        <div class="about-content reveal reveal-right">
+          <span class="section-tag">Our Roots & Heritage</span>
+          <h2 class="section-title" style="text-align:left; margin-bottom: 20px;">The Story of Angar Heritage</h2>
+          <p>At Angar Heritage, we believe food is more than sustenance—it is a thread connecting us to our ancestors. In a world dominated by ultra-processed options and quick shortcuts, we proudly choose the old ways. Our recipes have been whispered down through generations, preserved with the utmost care.</p>
+          <p>Every jar of pickle, pack of stone-ground podi, and box of heritage sweets is prepared in small batches, slow-cooked over a mild fire in traditional brass cookware to capture timeless flavours. We use only organic, wood-pressed oils, hand-pounded spices, and fresh ingredients with absolutely no preservatives or artificial colors.</p>
+          
+          <ul class="about-list">
+            <li><i class="fas fa-check-circle"></i> 100% Homemade Quality</li>
+            <li><i class="fas fa-check-circle"></i> Time-tested Traditional Recipes</li>
+            <li><i class="fas fa-check-circle"></i> Freshly Harvested Ingredients</li>
+            <li><i class="fas fa-check-circle"></i> Zero Preservatives & Additives</li>
+            <li><i class="fas fa-check-circle"></i> Hygienic Traditional Kitchens</li>
+            <li><i class="fas fa-check-circle"></i> Uncompromised Authentic Taste</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Cards Section -->
+  <section>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Pure & Uncompromised</span>
+        <h2 class="section-title">Why Choose Angar Heritage?</h2>
+        <p class="section-desc">We bridge the gap between pure traditional kitchens and modern convenience, promising you clean and incredibly flavorful food items.</p>
+      </div>
+      
+      <div class="why-grid">
+        <div class="why-card reveal reveal-up">
+          <div class="why-icon"><i class="fas fa-home"></i></div>
+          <h3 class="why-title">Homemade Quality</h3>
+          <p class="why-desc">Prepared in small kitchen clusters by traditional culinary artisans under complete hygienic supervision.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-up" style="transition-delay: 0.1s;">
+          <div class="why-icon"><i class="fas fa-scroll"></i></div>
+          <h3 class="why-title">Traditional Recipes</h3>
+          <p class="why-desc">Centuries-old kitchen secrets cooked in brass, clay, and bronze vessels for organic flavour depth.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-up" style="transition-delay: 0.2s;">
+          <div class="why-icon"><i class="fas fa-pepper-hot"></i></div>
+          <h3 class="why-title">Premium Ingredients</h3>
+          <p class="why-desc">Handpicked raw mangoes, high-curcumin turmeric roots, and pure wood-pressed cold oils.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-up" style="transition-delay: 0.3s;">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3 class="why-title">Freshly Prepared</h3>
+          <p class="why-desc">No mass warehousing. We prepare items in cycles and ship immediately to preserve freshness.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-up" style="transition-delay: 0.4s;">
+          <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3 class="why-title">Fast Delivery</h3>
+          <p class="why-desc">Insulated packaging combined with express shipping across India, preserving glass jars perfectly.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-up" style="transition-delay: 0.5s;">
+          <div class="why-icon"><i class="fas fa-users"></i></div>
+          <h3 class="why-title">Trusted by Families</h3>
+          <p class="why-desc">Thousands of happy households trust our pure, pesticide-free home products for daily meals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counters Banner -->
+  <section class="counters-section">
+    <div class="section-container">
+      <div class="counters-grid">
+        <div class="counter-item">
+          <span class="counter-number" data-target="15000" data-suffix="+">0+</span>
+          <span class="counter-text">Happy Families</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" data-target="25" data-suffix="+">0+</span>
+          <span class="counter-text">Heritage Recipes</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" data-target="4.9" data-suffix="/5">0/5</span>
+          <span class="counter-text">Average Rating</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" data-target="100" data-suffix="%">0%</span>
+          <span class="counter-text">Preservative Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bestsellers Slider Section -->
+  <section style="background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Customer Favorites</span>
+        <h2 class="section-title">Featured Bestsellers</h2>
+        <p class="section-desc">Explore our top rated recipes ordered frequently by our regular patrons.</p>
+      </div>
+      
+      <div class="bestsellers-wrapper reveal reveal-zoom">
+        <button class="slider-btn slider-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="bestsellers-track">
+          <!-- Bestseller Product cards will be initialized here by Products script -->
+          <div class="product-card" data-id="pickle-mango-avakaya" style="min-width: 300px;">
+            <div class="product-img-box">
+              <img src="images/products/imgi_4_748311844_18143376121519753_4526032022796940326_n.jpg" alt="Mango Pickle">
+              <span class="discount-badge" style="position:absolute; top:15px; left:15px;">16% OFF</span>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">pickles</span>
+              <h3 class="product-name">Heritage Avakaya Mango Pickle</h3>
+              <p class="product-desc">Authentic spicy Andhra mango pickle prepared with premium local raw mangoes.</p>
+              <div class="product-footer">
+                <span class="product-price">₹249</span>
+                <button class="card-add-btn" onclick="handleAddToCart('pickle-mango-avakaya', 1)">Add</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card" data-id="sweet-atreyapuram-pootharekulu" style="min-width: 300px;">
+            <div class="product-img-box">
+              <img src="images/products/imgi_10_743995967_1542211480610908_5269361948815758500_n.jpg" alt="Pootharekulu">
+              <span class="discount-badge" style="position:absolute; top:15px; left:15px;">14% OFF</span>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">sweets</span>
+              <h3 class="product-name">Premium Jaggery Pootharekulu</h3>
+              <p class="product-desc">Atreyapuram's legendary paper-thin sweet wafers with ghee and nuts.</p>
+              <div class="product-footer">
+                <span class="product-price">₹299</span>
+                <button class="card-add-btn" onclick="handleAddToCart('sweet-atreyapuram-pootharekulu', 1)">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-id="pickle-chicken-boneless" style="min-width: 300px;">
+            <div class="product-img-box">
+              <img src="images/products/imgi_8_745594472_18141319909519753_2608714947155568092_n.jpg" alt="Chicken Pickle">
+              <span class="discount-badge" style="position:absolute; top:15px; left:15px;">18% OFF</span>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">pickles</span>
+              <h3 class="product-name">Spicy Boneless Chicken Pickle</h3>
+              <p class="product-desc">Tender boneless chicken deep-fried and mixed in rich ginger-garlic gravy.</p>
+              <div class="product-footer">
+                <span class="product-price">₹449</span>
+                <button class="card-add-btn" onclick="handleAddToCart('pickle-chicken-boneless', 1)">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-id="podi-ghee-karam" style="min-width: 300px;">
+            <div class="product-img-box">
+              <img src="images/products/imgi_3_745288374_18141730426519753_8806333830823780887_n.jpg" alt="Karam Podi">
+              <span class="discount-badge" style="position:absolute; top:15px; left:15px;">25% OFF</span>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">podi</span>
+              <h3 class="product-name">Ghee Karam Podi (Gunpowder)</h3>
+              <p class="product-desc">Classic South Indian dry spice mix, roasted to absolute perfection.</p>
+              <div class="product-footer">
+                <span class="product-price">₹149</span>
+                <button class="card-add-btn" onclick="handleAddToCart('podi-ghee-karam', 1)">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn slider-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="products.html" class="btn btn-dark">View Entire Store <i class="fas fa-store"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel Section -->
+  <section>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Patron Reviews</span>
+        <h2 class="section-title">Loved by Food Lovers</h2>
+        <p class="section-desc">Read feedback from home makers and food critics who cherish our slow-cooked products.</p>
+      </div>
+      
+      <div class="testi-carousel reveal reveal-up">
+        <div class="testi-track">
+          <div class="testi-slide">
+            <div class="testi-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-quote">"The Avakaya Mango Pickle took me straight back to my childhood. The aroma of cold wood-pressed sesame oil and fresh mustard is incredibly pure. You can tell it's not made in a factory!"</p>
+            <img src="images/logo/logo.jpg" alt="Swati Patel" class="testi-avatar">
+            <span class="testi-author">Swati Patel</span>
+            <span class="testi-location">Ahmedabad, Gujarat</span>
+          </div>
+          
+          <div class="testi-slide">
+            <div class="testi-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-quote">"Atreyapuram Pootharekulu is difficult to find fresh in North India. I ordered from Angar Heritage and it arrived crisp, packed in airtight boxes with heavy ghee aroma. Outstanding taste!"</p>
+            <img src="images/logo/logo.jpg" alt="Rohan Verma" class="testi-avatar">
+            <span class="testi-author">Rohan Verma</span>
+            <span class="testi-location">New Delhi</span>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-quote">"The Boneless Chicken Pickle is legendary! Juicy pieces and the spiced gravy matches perfectly with piping hot rice. I order a jar every single month now."</p>
+            <img src="images/logo/logo.jpg" alt="Vikram Adidhela" class="testi-avatar">
+            <span class="testi-author">Vikram Adidhela</span>
+            <span class="testi-location">Hyderabad, TS</span>
+          </div>
+        </div>
+        <div class="testi-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Masonry Gallery Section -->
+  <section style="background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Visual Feast</span>
+        <h2 class="section-title">Our Kitchen Gallery</h2>
+        <p class="section-desc">A visual glimpse into our small-batch slow-cooking preparation, golden sweets, and freshly packed glass containers.</p>
+      </div>
+      
+      <div class="gallery-grid reveal reveal-zoom">
+        <div class="gallery-item wide">
+          <img src="images/gallery/imgi_3_745288374_18141730426519753_8806333830823780887_n.jpg" alt="Freshly Pounded Karam Podi">
+          <div class="gallery-info">
+            <h4>Stone-Ground Karam Podi</h4>
+            <p>Roasted whole spices</p>
+          </div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="images/gallery/imgi_4_748311844_18143376121519753_4526032022796940326_n.jpg" alt="Heritage Ceramic Jar Mango Pickle">
+          <div class="gallery-info">
+            <h4>Traditional Avakaya</h4>
+            <p>Aged in ceramic Bharani jars</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/imgi_6_743812577_18141697036519753_8635269984999732576_n.jpg" alt="Butter Murukku Crunch">
+          <div class="gallery-info">
+            <h4>Crisp Butter Murukku</h4>
+            <p>Fresh oil frying</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/imgi_7_744602137_2525580511275514_7267425761708276990_n.jpg" alt="Sweet Shells Bellam Gavvalu">
+          <div class="gallery-info">
+            <h4>Sweet Bellam Gavvalu</h4>
+            <p>Coated in jaggery</p>
+          </div>
+        </div>
+        <div class="gallery-item wide">
+          <img src="images/gallery/imgi_10_743995967_1542211480610908_5269361948815758500_n.jpg" alt="Atreyapuram Wafers Packing">
+          <div class="gallery-info">
+            <h4>Pootharekulu Layering</h4>
+            <p>Pure cow ghee coats</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/imgi_8_745594472_18141319909519753_2608714947155568092_n.jpg" alt="Gourmet Chicken Pickling">
+          <div class="gallery-info">
+            <h4>Spicy Chicken Pickle</h4>
+            <p>Packed boneless country chicken</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Common Queries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear queries about preparation, ingredients, courier safety, and storage parameters.</p>
+      </div>
+      
+      <div class="faq-list reveal reveal-up">
+        <div class="faq-item active">
+          <button class="faq-question">
+            Are Angar Heritage products truly homemade?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely. We do not use commercial machinery or giant processing plants. All products are cooked in small, family-owned home kitchens in Ahmedabad, slow-cooked in traditional brass and bronze vessels to preserve natural nutrition and tastes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you add any chemicals or preservatives?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Never. We strictly avoid sodium benzoate, commercial vinegars, artificial food dyes, or MSG. Our pickles are preserved naturally using only pure wood-pressed sesame/groundnut oils, lemon juice, turmeric, and sea salt, just like grandmothers did.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the typical shelf life of your products?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our dry spice powders (podi) last for 6 months. Mango pickles last up to 12 months. Gourmet non-veg pickles (Chicken) have a shelf life of 3 months and are highly recommended to be stored in a refrigerator once unsealed.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Where do you deliver? How safe is the package?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We deliver across India to all major cities and towns. All our liquid-heavy items (pickles) are filled in food-grade glass jars, double vacuum-sealed, and layered inside premium shock-absorbing bubble wrap containers to prevent leaking or breakage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <div class="contact-layout">
+        
+        <div class="contact-info-panel reveal reveal-left">
+          <div>
+            <span class="section-tag" style="display:block; margin-bottom: 10px;">Reach Out</span>
+            <h2 class="section-title" style="text-align:left; margin-bottom: 20px;">Contact Our Kitchen</h2>
+            <p style="color:var(--text-soft)">Have queries about bulk pre-orders, corporate gifting, or custom spice modifications? Reach out to us directly.</p>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-card-text">
+              <h4>Kitchen Address</h4>
+              <p>Angar Heritage Cloud Kitchen, Satellite Area, Ahmedabad, Gujarat - 380015</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-card-text">
+              <h4>Email Patrons Support</h4>
+              <p>support@angarheritage.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-card-text">
+              <h4>Phone / WhatsApp Order</h4>
+              <p>+91 98765 43210 (10 AM to 8 PM)</p>
+            </div>
+          </div>
+          
+          <!-- Mock map placeholder -->
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>Ahmedabad Satellite Kitchen Map View</span>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem; border-radius: var(--radius-sm)">Open Map</a>
+          </div>
+        </div>
+        
+        <div class="contact-form-panel reveal reveal-right">
+          <h3 class="form-title" style="font-family:var(--font-serif)">Send Us a Message</h3>
+          <form class="contact-form" id="contact-form-el">
+            <div class="form-group">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" class="form-input" placeholder="e.g. Swati Patel" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" class="form-input" placeholder="e.g. swati@gmail.com" required>
+            </div>
+            
+            <div class="form-group-full form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-input" placeholder="e.g. +91 9988776655" required>
+            </div>
+            
+            <div class="form-group-full form-group">
+              <label for="c-msg">Your Message</label>
+              <textarea id="c-msg" class="form-input" rows="5" placeholder="Tell us how we can help you..." required style="resize:none;"></textarea>
+            </div>
+            
+            <div class="form-group-full" style="margin-top:10px;">
+              <button type="submit" class="btn btn-dark" style="width:100%">Send Message <i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter delayed popup modal -->
+  <div id="newsletter-modal" class="modal">
+    <div class="modal-wrapper" style="max-width: 700px;">
+      <button class="modal-close" onclick="dismissNewsletter()"><i class="fas fa-times"></i></button>
+      <div class="newsletter-modal-content">
+        <div class="nm-img-box"></div>
+        <div class="nm-info-box">
+          <span class="product-cat">Heritage Circle</span>
+          <h2 style="font-family: var(--font-serif); color: var(--primary-dark)">Get 10% Off Your First Pre-Order</h2>
+          <p style="font-size:0.85rem; color:var(--text-soft)">Join our mailing list to receive exclusive coupons, notifications of fresh batch pre-orders, and traditional kitchen tips.</p>
+          <form onsubmit="handleNewsletterSubmit(event)" style="display:flex; flex-direction:column; gap:10px;">
+            <input type="email" id="newsletter-email" class="form-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary" style="width:100%">Claim 10% Discount <i class="fas fa-gift"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Cart Drawer Elements -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body">
+      <!-- Injected by JavaScript -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <p style="font-size:0.75rem; color:var(--text-soft)">Taxes and delivery shipping are calculated at checkout.</p>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary" style="padding:10px;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="padding:10px;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Layout -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Angar Heritage</title>
+  <meta name="description" content="Provide shipping address and select payment method to place your order with Angar Heritage.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner & Breadcrumbs -->
+  <section style="padding: 140px 0 40px; background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+        <li>Checkout</li>
+      </ul>
+      <h1 style="font-family: var(--font-serif); font-size: 2.8rem; color: var(--primary-dark)">Secure Checkout</h1>
+    </div>
+  </section>
+
+  <!-- Checkout Layout -->
+  <section style="padding: 60px 0 100px;">
+    <div class="section-container">
+      <div class="checkout-layout">
+        
+        <!-- Left: Customer shipping & payment form -->
+        <div class="checkout-form-card reveal reveal-left">
+          <h2>Shipping Information</h2>
+          
+          <form id="checkout-info-form" onsubmit="handlePlaceOrder(event)">
+            <div class="checkout-form-grid">
+              <div class="form-group">
+                <label for="chk-name">Recipient Full Name</label>
+                <input type="text" id="chk-name" class="form-input" placeholder="e.g. Swati Patel" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="chk-email">Email Address</label>
+                <input type="email" id="chk-email" class="form-input" placeholder="e.g. swati@gmail.com" required>
+              </div>
+              
+              <div class="form-group" style="grid-column:span 2">
+                <label for="chk-phone">Contact Number (Indian Mobile)</label>
+                <input type="tel" id="chk-phone" class="form-input" placeholder="10-Digit Mobile Number" required pattern="[6-9][0-9]{9}">
+              </div>
+              
+              <div class="form-group" style="grid-column:span 2">
+                <label for="chk-address">Delivery Address (House No, Street, Landmark)</label>
+                <input type="text" id="chk-address" class="form-input" placeholder="Full shipping address details" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="chk-city">City</label>
+                <input type="text" id="chk-city" class="form-input" placeholder="e.g. Ahmedabad" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="chk-zip">Pincode / ZIP Code</label>
+                <input type="text" id="chk-zip" class="form-input" placeholder="6-Digit ZIP" required pattern="[0-9]{6}">
+              </div>
+            </div>
+            
+            <h2 style="margin-top: 40px;">Select Payment Option</h2>
+            <div class="payment-methods" style="margin-top:15px;">
+              <div class="payment-tabs">
+                <div class="payment-tab active" onclick="switchPaymentTab(this, 'pay-cod')">
+                  <i class="fas fa-hand-holding-usd"></i>
+                  <span>Cash on Delivery</span>
+                </div>
+                <div class="payment-tab" onclick="switchPaymentTab(this, 'pay-upi')">
+                  <i class="fas fa-qrcode"></i>
+                  <span>UPI Payment</span>
+                </div>
+                <div class="payment-tab" onclick="switchPaymentTab(this, 'pay-card')">
+                  <i class="far fa-credit-card"></i>
+                  <span>Credit Card</span>
+                </div>
+              </div>
+              
+              <div class="payment-panes">
+                <!-- COD Pane -->
+                <div id="pay-cod" class="payment-pane active">
+                  <p><i class="fas fa-info-circle" style="color:var(--golden); margin-right:8px"></i> Pay with cash/UPI at the time of delivery. A verification call will be made prior to batch dispatch.</p>
+                </div>
+                
+                <!-- UPI Pane -->
+                <div id="pay-upi" class="payment-pane">
+                  <p style="margin-bottom:10px;">Scan or enter UPI details below to pay:</p>
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background-color:var(--white); padding:16px; text-align:center; border-radius:var(--radius-md); border:1px solid var(--border-color); max-width:180px; margin:0 auto;">
+                      <i class="fas fa-qrcode" style="font-size:5rem; color:var(--primary-dark)"></i>
+                      <p style="font-size:0.7rem; color:var(--text-soft); margin-top:8px">Scan UPI QR Code</p>
+                    </div>
+                    <input type="text" class="form-input" placeholder="Enter UPI ID (e.g. name@upi)" style="max-width:320px; margin:0 auto; text-align:center;">
+                  </div>
+                </div>
+                
+                <!-- Card Pane -->
+                <div id="pay-card" class="payment-pane">
+                  <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div class="form-group">
+                      <label>Cardholder Name</label>
+                      <input type="text" class="form-input" placeholder="Full name on card">
+                    </div>
+                    <div class="form-group">
+                      <label>Credit Card Number</label>
+                      <input type="text" class="form-input" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{16}">
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                      <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" class="form-input" placeholder="MM/YY">
+                      </div>
+                      <div class="form-group">
+                        <label>CVV Number</label>
+                        <input type="password" class="form-input" placeholder="XXX" maxLength="3">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 35px;">
+              <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.1rem; padding:16px;">
+                Place Pre-Order Now <i class="fas fa-shield-alt"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Right: Order summary preview -->
+        <div class="cart-summary-card reveal reveal-right">
+          <h3>Summary Review</h3>
+          
+          <div class="checkout-summary-items" style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom:12px;">
+            <!-- Rendered by JS -->
+          </div>
+          
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="chk-subtotal">₹0</span>
+          </div>
+          
+          <div class="summary-row">
+            <span>Estimated GST Tax</span>
+            <span id="chk-tax">₹0</span>
+          </div>
+          
+          <div class="summary-row">
+            <span>Delivery Shipping</span>
+            <span id="chk-shipping">₹0</span>
+          </div>
+          
+          <div class="summary-row" id="chk-discount-row" style="display:none; color:var(--olive); font-weight:600">
+            <span>Applied Discount</span>
+            <span id="chk-discount">-₹0</span>
+          </div>
+          
+          <div class="summary-row total">
+            <span>Grand Total</span>
+            <span id="chk-total" style="color:var(--primary-dark)">₹0</span>
+          </div>
+          
+          <div style="background-color: var(--cream); border:1px solid var(--border-color); padding: 16px; border-radius: var(--radius-md); font-size:0.75rem; color:var(--text-soft); line-height: 1.5;">
+            <p>📋 <strong>Pre-Order Policy:</strong> Because our kitchen slow-cooks in traditional copper & brass cookware, items are prepared only on order request batches. Shipping tracking codes will be emailed once dispatched.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Popup Modal Container -->
+  <div id="order-success-modal" class="modal">
+    <!-- Populated dynamically via handlePlaceOrder in checkout.js -->
+  </div>
+
+  <!-- Sidebar Cart Drawer (Fallback placeholder) -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Layout -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

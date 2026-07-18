@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Angar Heritage</title>
+  <meta name="description" content="Get in touch with Angar Heritage. Pre-orders, feedback, bulk inquiries, or corporate gifting queries.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner & Breadcrumbs -->
+  <section style="padding: 140px 0 40px; background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>Contact Us</li>
+      </ul>
+      <h1 style="font-family: var(--font-serif); font-size: 2.8rem; color: var(--primary-dark)">Get In Touch</h1>
+    </div>
+  </section>
+
+  <!-- Contact layout info -->
+  <section style="padding: 60px 0 100px;">
+    <div class="section-container">
+      <div class="contact-layout">
+        
+        <!-- Info Column -->
+        <div class="contact-info-panel reveal reveal-left">
+          <div>
+            <h2 class="section-title" style="text-align:left; margin-bottom: 20px;">Angar Heritage Kitchen</h2>
+            <p style="color:var(--text-soft)">We'd love to hear from you. Whether you have questions about cooking, packaging safety, customized spice ratios, or high-volume orders, get in touch.</p>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-card-text">
+              <h4>Kitchen Location</h4>
+              <p>Angar Heritage Cloud Kitchen, Satellite Area, Ahmedabad, Gujarat - 380015</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-card-text">
+              <h4>Email Inquiries</h4>
+              <p>support@angarheritage.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-card-text">
+              <h4>Contact Number</h4>
+              <p>+91 98765 43210 (10:00 AM to 08:00 PM, Mon-Sat)</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-box">
+            <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-card-text">
+              <h4>WhatsApp Chat Orders</h4>
+              <p style="margin-bottom:6px;">Instantly send a message on WhatsApp for customized pre-orders:</p>
+              <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="btn btn-olive" style="padding: 8px 16px; font-size: 0.85rem; border-radius: var(--radius-sm)"><i class="fab fa-whatsapp" style="margin-right:6px;"></i> Chat on WhatsApp</a>
+            </div>
+          </div>
+          
+          <!-- Mock Map Placeholder -->
+          <div class="map-placeholder" style="height: 280px; margin-top:10px;">
+            <i class="fas fa-map-marked-alt" style="font-size:3rem;"></i>
+            <h4 style="font-family: var(--font-serif); color: var(--primary-dark)">Google Maps View</h4>
+            <p style="font-size:0.8rem; color:var(--text-soft)">Satellite Area, Ahmedabad, Gujarat</p>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem; border-radius: var(--radius-sm)">Open Map Direction</a>
+          </div>
+        </div>
+        
+        <!-- Form Column -->
+        <div class="contact-form-panel reveal reveal-right">
+          <h3 class="form-title" style="font-family:var(--font-serif)">Send Us a Message</h3>
+          <form class="contact-form" id="contact-form-el">
+            <div class="form-group">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" class="form-input" placeholder="e.g. Swati Patel" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" class="form-input" placeholder="e.g. swati@gmail.com" required>
+            </div>
+            
+            <div class="form-group-full form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-input" placeholder="e.g. +91 9988776655" required>
+            </div>
+            
+            <div class="form-group-full form-group">
+              <label for="c-msg">Your Message</label>
+              <textarea id="c-msg" class="form-input" rows="7" placeholder="Write your message here..." required style="resize:none;"></textarea>
+            </div>
+            
+            <div class="form-group-full" style="margin-top:10px;">
+              <button type="submit" class="btn btn-dark" style="width:100%">Send Message <i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Cart Drawer (Fallback placeholder) -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Layout -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

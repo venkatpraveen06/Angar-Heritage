@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Angar Heritage</title>
+  <meta name="description" content="View ingredients, shelf life, benefits, and cooking methods for our premium homemade slow-cooked Indian foods.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link active">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner & Breadcrumbs -->
+  <section style="padding: 140px 0 40px; background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop Collections</a></li>
+        <li id="breadcrumb-product-name">Product Details</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Product Details layout -->
+  <section style="padding: 60px 0 100px;">
+    <div class="section-container">
+      <div class="details-grid">
+        
+        <!-- Left Column: Gallery & Main Image -->
+        <div class="details-gallery reveal reveal-left">
+          <div class="details-main-img">
+            <img id="details-img" src="" alt="">
+          </div>
+        </div>
+        
+        <!-- Right Column: Info details -->
+        <div class="details-info reveal reveal-right">
+          <div class="details-badges">
+            <span class="discount-badge" id="details-discount" style="position:static"></span>
+            <span style="font-weight:700; font-size:0.95rem; color:var(--olive)" id="details-stock-status"></span>
+          </div>
+          
+          <h1 id="details-name" style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--primary-dark)"></h1>
+          
+          <div class="product-rating" id="details-rating" style="margin-top:0">
+            <!-- Injected stars -->
+          </div>
+          
+          <div class="details-price-row">
+            <span class="details-price" id="details-price"></span>
+            <span class="details-mrp" id="details-mrp"></span>
+          </div>
+          
+          <p id="details-desc" style="color: var(--text-soft); font-size: 1.05rem; line-height: 1.6;"></p>
+          
+          <!-- Detail Tabs block -->
+          <div class="qv-tabs" style="margin-top:10px;">
+            <button class="qv-tab-btn active" onclick="switchDetailsTab(this, 'tab-ingredients')">Ingredients</button>
+            <button class="qv-tab-btn" onclick="switchDetailsTab(this, 'tab-benefits')">Benefits</button>
+            <button class="qv-tab-btn" onclick="switchDetailsTab(this, 'tab-instructions')">Storage Instructions</button>
+          </div>
+          
+          <div id="tab-ingredients" class="qv-tab-pane active"></div>
+          <div id="tab-benefits" class="qv-tab-pane"></div>
+          <div id="tab-instructions" class="qv-tab-pane"></div>
+          
+          <!-- Actions & Quantity -->
+          <div class="details-actions">
+            <div class="qv-quantity">
+              <button class="qty-btn" onclick="adjustDetailsQty(-1)">-</button>
+              <input type="text" class="qv-qty-input" id="details-qty-val" value="1" readonly>
+              <button class="qty-btn" onclick="adjustDetailsQty(1)">+</button>
+            </div>
+            
+            <button class="btn btn-primary" id="details-add-btn">
+              <i class="fas fa-shopping-basket"></i> Add to Cart
+            </button>
+            <button class="btn btn-dark" id="details-buy-btn">
+              Buy Now
+            </button>
+          </div>
+          
+          <!-- Specifications list -->
+          <ul class="details-spec-list">
+            <li><strong>Category:</strong> <span id="details-cat-val" style="text-transform: uppercase;"></span></li>
+            <li><strong>Weight:</strong> <span id="details-weight-val"></span></li>
+            <li><strong>Shelf Life:</strong> <span id="details-shelflife-val"></span></li>
+            <li><strong>Preparation:</strong> Small-batch Handcrafted</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products Section -->
+  <section style="background-color: var(--light-bg); padding: 80px 0; border-top:1px solid var(--border-color); transition: var(--transition);">
+    <div class="section-container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <h2 style="font-family: var(--font-serif); font-size: 2rem;">Related Delicacies</h2>
+        <p style="color:var(--text-soft)">Patrons who ordered this item also explored these heritage collections.</p>
+      </div>
+      
+      <div class="products-grid" id="related-products-grid">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Cart Drawer -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body">
+      <!-- Injected by JS -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <p style="font-size:0.75rem; color:var(--text-soft)">Taxes and delivery shipping are calculated at checkout.</p>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary" style="padding:10px;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="padding:10px;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Layout -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Interactive script to load item info -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+      
+      if (!productId) {
+        window.location.href = "products.html";
+        return;
+      }
+      
+      const p = getProductById(productId);
+      if (!p) {
+        window.location.href = "products.html";
+        return;
+      }
+      
+      // Populate Details Page elements
+      document.title = `${p.name} | Angar Heritage Details`;
+      document.getElementById("breadcrumb-product-name").textContent = p.name;
+      document.getElementById("details-img").src = p.image;
+      document.getElementById("details-img").alt = p.name;
+      document.getElementById("details-name").textContent = p.name;
+      document.getElementById("details-price").textContent = `₹${p.price}`;
+      document.getElementById("details-mrp").textContent = `₹${p.mrp}`;
+      document.getElementById("details-desc").textContent = p.description;
+      
+      // Badges
+      const discBad = document.getElementById("details-discount");
+      if (p.discountBadge) {
+        discBad.textContent = p.discountBadge;
+        discBad.style.display = "inline-block";
+      } else {
+        discBad.style.display = "none";
+      }
+      
+      const stockStatus = document.getElementById("details-stock-status");
+      stockStatus.textContent = p.inStock ? "In Stock" : "Sold Out";
+      stockStatus.style.color = p.inStock ? "var(--olive)" : "#D32F2F";
+      
+      // Rating stars
+      document.getElementById("details-rating").innerHTML = `
+        ${getRatingStarsHTML(p.rating)}
+        <span>(${p.ratingCount} reviews)</span>
+      `;
+      
+      // Tabs
+      document.getElementById("tab-ingredients").textContent = p.ingredients;
+      document.getElementById("tab-benefits").textContent = p.benefits;
+      document.getElementById("tab-instructions").innerHTML = `
+        <p><strong>Shelf Life:</strong> ${p.shelfLife}</p>
+        <p style="margin-top: 8px;"><strong>Storage instructions:</strong> ${p.instructions}</p>
+      `;
+      
+      // Spec fields
+      document.getElementById("details-cat-val").textContent = p.category;
+      document.getElementById("details-weight-val").textContent = p.weight;
+      document.getElementById("details-shelflife-val").textContent = p.shelfLife;
+      
+      // Hook events
+      const addBtn = document.getElementById("details-add-btn");
+      const buyBtn = document.getElementById("details-buy-btn");
+      
+      if (p.inStock) {
+        addBtn.addEventListener("click", () => {
+          const qty = parseInt(document.getElementById("details-qty-val").value);
+          handleAddToCart(p.id, qty);
+        });
+        
+        buyBtn.addEventListener("click", () => {
+          const qty = parseInt(document.getElementById("details-qty-val").value);
+          addToCartSilent(p.id, qty);
+          window.location.href = "checkout.html";
+        });
+      } else {
+        addBtn.textContent = "Sold Out";
+        addBtn.disabled = true;
+        addBtn.style.backgroundColor = "var(--text-soft)";
+        addBtn.style.color = "var(--cream)";
+        addBtn.style.cursor = "not-allowed";
+        
+        buyBtn.style.display = "none";
+      }
+      
+      // Render Related items (Same category, excluding current product ID)
+      const wishlist = getWishlist();
+      let relatedProducts = getProducts().filter(item => item.category === p.category && item.id !== p.id);
+      
+      // Fallback if no same-category items exist
+      if (relatedProducts.length === 0) {
+        relatedProducts = getProducts().filter(item => item.id !== p.id).slice(0, 3);
+      } else {
+        relatedProducts = relatedProducts.slice(0, 3);
+      }
+      
+      const relatedGrid = document.getElementById("related-products-grid");
+      if (relatedGrid) {
+        relatedGrid.innerHTML = relatedProducts.map(item => createProductCardHTML(item, wishlist)).join("");
+      }
+    });
+
+    window.adjustDetailsQty = (amount) => {
+      const input = document.getElementById("details-qty-val");
+      if (!input) return;
+      let val = parseInt(input.value) + amount;
+      if (val < 1) val = 1;
+      input.value = val;
+    };
+
+    window.switchDetailsTab = (btn, paneId) => {
+      const tabContainer = btn.parentNode;
+      tabContainer.querySelectorAll(".qv-tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      
+      const paneContainer = tabContainer.parentNode;
+      paneContainer.querySelectorAll(".qv-tab-pane").forEach(p => p.classList.remove("active"));
+      paneContainer.querySelector(`#${paneId}`).classList.add("active");
+    };
+  </script>
+
+</body>
+</html>

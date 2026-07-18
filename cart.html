@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Angar Heritage</title>
+  <meta name="description" content="Review your cart items, apply discount coupon codes, and proceed to checkout for authentic Indian homemade foods.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner & Breadcrumbs -->
+  <section style="padding: 140px 0 40px; background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>Shopping Cart</li>
+      </ul>
+      <h1 style="font-family: var(--font-serif); font-size: 2.8rem; color: var(--primary-dark)">My Shopping Basket</h1>
+    </div>
+  </section>
+
+  <!-- Cart Page Layout -->
+  <section style="padding: 60px 0 100px;">
+    <div class="section-container">
+      <div class="cart-layout">
+        
+        <!-- Left Column: Items Table List -->
+        <div class="cart-table-card reveal reveal-left">
+          <div class="cart-table-header">
+            <span>Product Delicacy</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total Price</span>
+          </div>
+          
+          <div class="cart-table-items">
+            <!-- Populated dynamically via renderCartPage in cart.js -->
+          </div>
+          
+          <div style="display:flex; justify-content:space-between; margin-top:20px; align-items:center;">
+            <a href="products.html" class="btn btn-secondary" style="font-size:0.9rem"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            <button class="btn btn-dark" onclick="clearCart()" style="font-size:0.9rem; background-color:#D32F2F; color:var(--white)"><i class="fas fa-trash-alt"></i> Clear Basket</button>
+          </div>
+        </div>
+        
+        <!-- Right Column: Calculation Summary Drawer -->
+        <div class="cart-summary-card reveal reveal-right">
+          <h3>Order Subtotal</h3>
+          
+          <div class="summary-row">
+            <span>Basket Subtotal</span>
+            <span id="cart-subtotal">₹0</span>
+          </div>
+          
+          <div class="summary-row">
+            <span>Estimated Tax (5% GST)</span>
+            <span id="cart-tax">₹0</span>
+          </div>
+          
+          <div class="summary-row">
+            <span>Delivery Shipping</span>
+            <span id="cart-shipping">₹0</span>
+          </div>
+          
+          <div class="summary-row" id="cart-discount-row" style="display:none; color:var(--olive); font-weight:600">
+            <span>Discount Applied</span>
+            <span id="cart-discount">-₹0</span>
+          </div>
+          
+          <!-- Coupon input box -->
+          <div style="margin-top:10px;">
+            <label style="font-size:0.8rem; font-weight:600; color:var(--text-soft); display:block; margin-bottom:8px">Apply Coupon Code</label>
+            <div class="coupon-box">
+              <input type="text" id="coupon-code-input" placeholder="e.g. WELCOME10">
+              <button onclick="handleApplyCoupon()">Apply</button>
+            </div>
+            <p id="coupon-status-msg" class="coupon-status" style="margin-top:6px; font-size:0.8rem;"></p>
+            
+            <div style="background-color: var(--cream); border:1px dashed var(--border-color); padding: 12px; border-radius: var(--radius-sm); font-size:0.75rem; color:var(--text-soft); margin-top:12px; line-height: 1.4;">
+              <span style="font-weight:700; color:var(--primary-dark)">Available Promo Codes:</span>
+              <ul style="list-style:none; margin-top:4px;">
+                <li>🔥 <strong>WELCOME10</strong>: 10% OFF on purchase above ₹499</li>
+                <li>🎉 <strong>FESTIVAL20</strong>: 20% OFF on purchase above ₹999</li>
+                <li>⭐ <strong>GOLDEN50</strong>: 50% OFF on purchase above ₹2999</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="summary-row total">
+            <span>Grand Total</span>
+            <span id="cart-total" style="color:var(--primary-dark)">₹0</span>
+          </div>
+          
+          <a href="checkout.html" class="btn btn-primary" style="width:100%; margin-top:10px;">Proceed to Checkout <i class="fas fa-lock"></i></a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Cart Drawer (Fallback placeholder) -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Layout -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

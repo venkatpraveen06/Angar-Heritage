@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Collections | Angar Heritage</title>
+  <meta name="description" content="Shop authentic homemade Indian pickles, freshly ground podi powders, premium butter snacks, and organic jaggery sweets. Small-batch pre-orders.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Loader Animation -->
+  <div class="page-loader">
+    <img src="images/logo/logo.jpg" alt="Angar Heritage" class="loader-logo" style="border-radius: 50%;">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius: 50%;">
+        <span class="logo-text">Angar <span style="color:var(--golden);">Heritage</span></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link active">Shop Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-wrapper">
+          <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+          <label class="theme-label" for="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        
+        <a href="products.html?filter=wishlist" class="action-btn" title="View Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-badge-count">0</span>
+        </a>
+        
+        <button class="action-btn cart-toggle-btn" title="View Cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="badge cart-badge-count">0</span>
+        </button>
+        
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner & Breadcrumbs -->
+  <section style="padding: 140px 0 40px; background-color: var(--light-bg); transition: var(--transition);">
+    <div class="section-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>Shop Collections</li>
+      </ul>
+      <h1 style="font-family: var(--font-serif); font-size: 2.8rem; color: var(--primary-dark)">Heritage Collections</h1>
+      <p style="color: var(--text-soft); margin-top: 10px; max-width: 600px;">Explore pure Indian delicacies crafted over low slow fires in traditional vessels. Filter by categories to discover pickles, sweets, podi, and savories.</p>
+    </div>
+  </section>
+
+  <!-- Main Shop Catalog Page Layout -->
+  <section style="padding: 60px 0 100px;">
+    <div class="section-container">
+      <div class="shop-layout">
+        
+        <!-- Sidebar Filters Column -->
+        <aside class="shop-sidebar">
+          
+          <!-- Categories Filter Block -->
+          <div class="filter-block">
+            <h3>Categories</h3>
+            <ul class="filter-list">
+              <li class="filter-item active" data-category="all">
+                <span>All Collections</span>
+                <span class="filter-count count-all">0</span>
+              </li>
+              <li class="filter-item" data-category="pickles">
+                <span>Heritage Pickles</span>
+                <span class="filter-count count-pickles">0</span>
+              </li>
+              <li class="filter-item" data-category="podi">
+                <span>Earthy Podi (Powders)</span>
+                <span class="filter-count count-podi">0</span>
+              </li>
+              <li class="filter-item" data-category="snacks">
+                <span>Crisp Savories & Snacks</span>
+                <span class="filter-count count-snacks">0</span>
+              </li>
+              <li class="filter-item" data-category="sweets">
+                <span>Desi Ghee Sweets</span>
+                <span class="filter-count count-sweets">0</span>
+              </li>
+              <li class="filter-item" data-category="combos">
+                <span>Assorted Combos</span>
+                <span class="filter-count count-combos">0</span>
+              </li>
+              <li class="filter-item" data-category="wishlist" style="border-top:1px solid var(--border-color); padding-top:15px; margin-top:10px;">
+                <span style="color:#D32F2F;"><i class="fas fa-heart" style="margin-right:8px"></i>My Wishlist</span>
+                <span class="filter-count wishlist-badge-count" style="background-color:rgba(211,47,47,0.1); color:#D32F2F">0</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Quality Assurance Banner -->
+          <div class="filter-block" style="background-color: var(--primary-dark); color: var(--cream); border-color: var(--golden); text-align: center;">
+            <i class="fas fa-award" style="font-size: 2.2rem; color: var(--golden); margin-bottom: 12px;"></i>
+            <h4 style="font-family: var(--font-serif); color: var(--golden); margin-bottom:8px">100% Homemade</h4>
+            <p style="font-size: 0.8rem; line-height: 1.4; color: var(--text-soft)">We don't use chemical shelf-extenders. Prepared in small home batches with pure wood-pressed sesame and groundnut oils.</p>
+          </div>
+          
+        </aside>
+        
+        <!-- Products Grid & Controls Column -->
+        <main class="shop-content">
+          
+          <!-- Search and Sorting Toolbar -->
+          <div class="shop-toolbar">
+            <div class="search-wrapper">
+              <i class="fas fa-search"></i>
+              <input type="text" id="search-input" placeholder="Search pickles, sweets, podi...">
+            </div>
+            
+            <div class="toolbar-actions">
+              <span style="font-size: 0.9rem; font-weight:600; color: var(--text-soft)">Sort By</span>
+              <select id="sort-select" class="toolbar-select">
+                <option value="default">Default Features</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Grid Layout -->
+          <div class="products-grid">
+            <!-- Dynamically populated by JS -->
+          </div>
+          
+        </main>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick View Modal Container -->
+  <div id="quickview-modal" class="modal">
+    <!-- Populated dynamically via triggerQuickView -->
+  </div>
+
+  <!-- Sidebar Cart Drawer -->
+  <div class="cart-drawer-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Food Basket</h3>
+      <button class="cart-drawer-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body">
+      <!-- Injected by JS -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-summary-row">
+        <span>Subtotal:</span>
+        <span class="cart-drawer-total-val" style="color:var(--primary-dark); font-weight:700">₹0</span>
+      </div>
+      <p style="font-size:0.75rem; color:var(--text-soft)">Taxes and delivery shipping are calculated at checkout.</p>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-secondary" style="padding:10px;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="padding:10px;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="images/logo/logo.jpg" alt="Angar Heritage Logo" style="border-radius:50%">
+            <span class="footer-logo-text">Angar Heritage</span>
+          </div>
+          <p style="margin-top: 15px;">Timeless homemade flavours crafted over mild slow fires in traditional brassware. We bring pure, uncompromised Indian culinary roots back to modern households.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+            <li><a href="products.html?filter=wishlist">My Wishlist</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Our Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=pickles">Traditional Pickles</a></li>
+            <li><a href="products.html?category=podi">Earthy Karam Podi</a></li>
+            <li><a href="products.html?category=snacks">Butter Savory Snacks</a></li>
+            <li><a href="products.html?category=sweets">Jaggery Sweets</a></li>
+            <li><a href="products.html?category=combos">Assorted Combos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-newsletter">
+          <h4>Heritage Circle</h4>
+          <p>Subscribe to know when fresh batches are cooking and grab discount vouchers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.reset();" style="margin-top:15px;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Angar Heritage Foods. All rights reserved. Created in Ahmedabad.</p>
+        <div class="footer-bottom-links">
+          <a href="#" style="color:var(--text-soft)">Privacy Policy</a>
+          <a href="#" style="color:var(--text-soft)">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets -->
+  <button class="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+  <a href="https://wa.me/919876543210?text=Hello%20Angar%20Heritage,%20I'd%20like%20to%20place%20a%20pre-order!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Global scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Interactive inline router for filtering parsing -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      let initialCategory = urlParams.get("category") || "all";
+      let initialFilter = urlParams.get("filter") || "";
+      
+      const filterItems = document.querySelectorAll(".filter-item");
+      
+      let currentCategory = initialCategory;
+      let currentSearch = "";
+      let currentSort = "default";
+      
+      if (initialFilter === "wishlist") {
+        currentCategory = "wishlist";
+      }
+
+      // Highlight active category in UI
+      filterItems.forEach(item => {
+        if (item.getAttribute("data-category") === currentCategory) {
+          filterItems.forEach(i => i.classList.remove("active"));
+          item.classList.add("active");
+        }
+      });
+
+      const productGridSelector = ".products-grid";
+      const searchInput = document.getElementById("search-input");
+      const sortSelect = document.getElementById("sort-select");
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentSearch = e.target.value;
+          updateCatalog();
+        });
+      }
+
+      if (sortSelect) {
+        sortSelect.addEventListener("change", (e) => {
+          currentSort = e.target.value;
+          updateCatalog();
+        });
+      }
+
+      filterItems.forEach(item => {
+        item.addEventListener("click", () => {
+          filterItems.forEach(i => i.classList.remove("active"));
+          item.classList.add("active");
+          currentCategory = item.getAttribute("data-category");
+          
+          // Clean search inputs and parameters on category change
+          if (searchInput) searchInput.value = "";
+          currentSearch = "";
+          
+          // Clear query params visually without reload
+          window.history.pushState({}, "", "products.html" + (currentCategory !== "all" ? `?category=${currentCategory}` : ""));
+          
+          updateCatalog();
+        });
+      });
+
+      function updateCatalog() {
+        if (currentCategory === "wishlist") {
+          const container = document.querySelector(productGridSelector);
+          if (!container) return;
+          
+          let products = getProducts();
+          const wishlist = getWishlist();
+          products = products.filter(p => wishlist.includes(p.id));
+          
+          if (products.length === 0) {
+            container.innerHTML = `
+              <div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-soft)">
+                <i class="far fa-heart" style="font-size: 3.5rem; margin-bottom: 20px; color: var(--golden)"></i>
+                <h3>Your Wishlist is Empty</h3>
+                <p style="margin-top: 10px;">Go back to the catalog and heart some delicious items to save them here.</p>
+              </div>
+            `;
+            return;
+          }
+          
+          container.innerHTML = products.map(p => createProductCardHTML(p, wishlist)).join("");
+          if (window.initializeScrollReveal) window.initializeScrollReveal();
+        } else {
+          renderCatalog(productGridSelector, currentCategory, currentSearch, currentSort);
+        }
+      }
+
+      updateCatalog();
+      
+      // Seed count numbers dynamically
+      const productsList = getProducts();
+      document.querySelector('.count-all').textContent = productsList.length;
+      document.querySelector('.count-pickles').textContent = productsList.filter(p => p.category === "pickles").length;
+      document.querySelector('.count-podi').textContent = productsList.filter(p => p.category === "podi").length;
+      document.querySelector('.count-snacks').textContent = productsList.filter(p => p.category === "snacks").length;
+      document.querySelector('.count-sweets').textContent = productsList.filter(p => p.category === "sweets").length;
+      document.querySelector('.count-combos').textContent = productsList.filter(p => p.category === "combos").length;
+    });
+  </script>
+
+</body>
+</html>
